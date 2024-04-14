@@ -1,0 +1,143 @@
+mkdir SI_2024_lab1_203155
+=> Креираме директориум со назив SI_2024_lab1_203155
+
+cd SI_2024_lab1_203155
+=> Пристапуваме до претходно креираниот директориум SI_2024_lab1_203155 .
+
+git init
+=> Правиме иницијализација на git во директориумот SI_2024_lab1_203155 .
+
+git remote add origin https://github.com/goce-damnjanovski/SI_2024_lab1_203155.git
+=> Го поврзуваме претходно креираниот оддалечен репозиториум со локалниот репозиториум.
+
+nano README.md
+=> Креираме README.md датотека со содржина име, презиме и број на индекс.
+
+git add README.md
+=> Ја додаваме датотеката README.md на stage.
+
+git commit -m "Initial commit"
+=> Правиме commit со порака: Initial commit.
+
+git add SILab1Main.java SILab1_1.java SILab1_2.java
+=> Ги додаваме на stage, претходно преземените датотеки: SILab1Main.java, SILab1_1.java и SILab1_2.java .
+
+git commit -m "Add starter code"
+=> Правиме commit со порака: Add starter code.
+
+git push --all origin
+=> Ги синхронизираме сите гранки со remote репозиториумот.
+
+git branch bug1
+=> Креираме нова гранка со назив: bug1.
+
+git branch bug2
+=> Креираме нова гранка со назив: bug2.
+
+git checkout bug1
+=> Се префрламе на гранката bug1.
+
+nano SILab1_1.java
+=>Ја отвараме датотеката SILab1_1.java и ја поправаме грешката во методот filterOddLengthStrings.
+
+git add SILab1_1.java
+=>Ја додаваме датотеката SILab1_1.java на stage.
+
+git commit -m "Fix wrong condition in filterOddLengthStrings"
+=>Правиме commit со порака: Fix wrong condition in filterOddLengthStrings.
+
+git checkout bug2
+=> Се префрламе на гранката bug2.
+
+nano SILab1_2.java
+=>Ја отвараме датотеката SILab1_2.java и ја поправаме грешката во методот makeBigStringFrom.
+
+git add SILab1_2.java
+=>Ја додаваме датотеката SILab1_2.java на stage.
+
+git commit -m "Fix wrong condition in makeBigStringFrom"
+=>Правиме commit со порака: Fix wrong condition in makeBigStringFrom.
+
+git checkout bug1
+=> Се префрламе на гранката bug1.
+
+nano SILab1Main.java
+=>Ја отвараме датотеката SILab1Main.java и додаваме повик до методот filterOddLengthStrings :
+System.out.println(SILab1_1.filterOddLengthStrings(list));.
+
+git add SILab1Main.java
+=>Ја додаваме датотеката SILab1Main.java на stage.
+
+git commit -m "Call method filterOddLengthStrings in main class"
+=>Правиме commit со порака: Call method filterOddLengthStrings in main class.
+
+git checkout bug2
+=> Се префрламе на гранката bug2.
+
+nano SILab1Main.java
+=>Ја отвараме датотеката SILab1Main.java и додаваме повик до методот  makeBigStringFrom :
+System.out.println(SILab1_2.makeBigStringFrom(list));.
+
+git add SILab1Main.java
+=>Ја додаваме датотеката SILab1Main.java на stage.
+
+git commit -m "Call method makeBigStringFrom in main class"
+=> Правиме commit со порака: Call method makeBigStringFrom in main class.
+
+git push --all origin
+=> Ги синхронизираме сите гранки со remote репозиториумот.
+
+git checkout master
+=> Се префрламе на master гранката.
+
+git merge bug1
+=> Ја спојуваме гранката bug1 кон master гранката.
+
+git push --all origin
+=> Ги синхронизираме сите гранки со remote репозиториумот.
+
+git checkout bug2
+=> Се префрламе на гранката bug2.
+
+git rebase master
+=> Правиме rebase кон master гранката, но притоа се јавува конфликт:
+CONFLICT (content): Merge conflict in SILab1Main.java
+
+Мануелно го решаваме конфликтот на тој начин што прво ја отвораме датотеката SILab1Main.java со командата: 
+nano SILab1Main.java
+Потоа одлучуваме да ги задржиме повиците и до двата методи: filterOddLengthStrings и makeBigStringFrom .
+За таа цел го бришеме деловите:
+"<<<<<<< HEAD", "=======" ">>>>>>>"
+со кои е означен делот и конфликтниот дел.
+Откако сме го завршиле овој дел продолжуваме со следните команди:
+git add SILab1Main.java
+=>Ја додаваме датотеката SILab1Main.java на stage.
+
+git rebase --continue
+=> Продолжуваме со постапката на rebase.
+
+:wq
+=> Зачувуваме и излегуваме од едиторот.
+
+git checkout master
+=> Се префрламе на master гранката.
+
+git merge bug2
+=> Ја спојуваме гранката bug2 кон master гранката.
+
+git push --all origin
+=> Се обидуваме да ги синхронизираме сите гранки со remote репозиториумот. 
+Но, поради гранката bug2 не е возможно и затоа ја користиме следната команда:
+git push --all --force origin
+
+git log > logs.txt
+=> Побаруваме информации за log-овите и информациите за истите ги сместуваме во датотеката logs.txt
+
+git add logs.txt 203155.txt
+=> Ги додаваме датотеките logs.txt и 203155.txt на stage.
+
+git commit -m "Final commit"
+=> Правиме последен commit со порака: Final commit.
+
+git push --all origin
+=> Ги синхронизираме сите гранки со remote репозиториумот.

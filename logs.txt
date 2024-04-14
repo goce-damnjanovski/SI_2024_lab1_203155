@@ -1,0 +1,35 @@
+commit af254bf1dc48e59033c20e0fdcc97fa95f0d0f4b
+Author: Goce Damnjanovski <goce.damnjanovski@gmail.com>
+Date:   Sun Apr 14 12:56:28 2024 +0200
+
+    Call method filterOddLengthStrings and method makeBigStringFrom in main class
+
+commit 598748b985acc152275312c1fe5eaec21566a79a
+Author: Goce Damnjanovski <goce.damnjanovski@gmail.com>
+Date:   Sun Apr 14 12:54:03 2024 +0200
+
+    Fix wrong condition in makeBigStringFrom
+
+commit 25e0dd873756cc8a490d15e12b6c7f493dba837e
+Author: Goce Damnjanovski <goce.damnjanovski@gmail.com>
+Date:   Sun Apr 14 12:55:02 2024 +0200
+
+    Call method filterOddLengthStrings in main class
+
+commit 75cd45e2e5ef18cd1524ad60cac87c9ed7cc64b2
+Author: Goce Damnjanovski <goce.damnjanovski@gmail.com>
+Date:   Sun Apr 14 12:53:20 2024 +0200
+
+    Fix wrong condition in filterOddLengthStrings
+
+commit d27737e13924ba5de5d21e7ad3dfda79951c0dca
+Author: Goce Damnjanovski <goce.damnjanovski@gmail.com>
+Date:   Sun Apr 14 12:51:56 2024 +0200
+
+    Add starter code
+
+commit 29faae1f4d10bea122ccfbf0cd8fcd8b829fc280
+Author: Goce Damnjanovski <goce.damnjanovski@gmail.com>
+Date:   Sun Apr 14 12:51:14 2024 +0200
+
+    Initial commit
